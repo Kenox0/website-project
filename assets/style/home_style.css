@@ -1,0 +1,294 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    font-size: 2rem;
+}
+
+.fade-out {
+  animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+  .loader {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #FFF;
+    border-bottom-color: green;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 0.3s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  } 
+
+  .hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: none;
+  }
+
+  .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .nav-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .top-footer-nav {
+    position: relative;
+    border-radius: 100px;
+    width: 1900px;
+    height: 0px;
+    /*backdrop-filter: blur(10px);*/
+    z-index: 999;
+    background-color: transparent;
+    /*border: 1px solid white;*/
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+  }
+
+  .nav-left {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .nav-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .si-right-btn {
+    padding-top: 5px;
+    background-color: transparent;
+    font-size: 17px;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 7px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+  }
+
+  .si-right-btn:hover {
+    filter: brightness(0.8);
+  }
+
+  .su-right-btn {
+    padding-top: 7px;
+    background-image: linear-gradient(45deg, green, cyan, green);
+    background-size: 300% 300%;
+    font-size: 17px;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 7px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+    width: 100px;
+    height: 35px;
+  }
+
+  .su-right-btn:hover {
+    filter: brightness(0.8);
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-75%);
+    padding: 0 1rem;
+    animation: moveUp 1s ease-in-out forwards, fadeAni 1s ease-in-out forwards;
+}
+
+  .hero h1 {
+    font-size: 70px;
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    transition: all 0.4s ease;
+  }
+
+  .hero p {
+    font-size: 23px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    transition: all 0.4s ease;
+  }
+
+  .gallery-button {
+    padding: 0.75rem 1.5rem;
+    background-image: linear-gradient(45deg, green, cyan, green);
+    background-size: 300% 300%;
+    animation: gradient-effect 20s ease-in-out infinite;
+    font-size: 20px;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 7px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+  }
+
+  .gallery-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 8px rgba(0, 255, 170, 0.24);
+  }
+  
+  .gallery-button:active {
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .about-section {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+    animation: moveUp 1s ease-in-out forwards, fadeAni 1s ease-in-out forwards;
+  }
+
+  .about-button {
+    background-color: transparent;
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 7px;
+    border: 2px solid #ffffff;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(7px);
+    width: 100px;
+    height: 50px;
+  }
+
+  .about-button:hover {
+    background-color: white;
+    color: black;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.3);
+  }
+  
+  .about-button:active {
+    transform: translateY(5px);
+    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.3);
+  }
+
+@keyframes gradient-effect {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(-30);
+    }
+}
+
+@keyframes fadeAni {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+    }
+}
+
+.gradient-text {
+  background-image: linear-gradient(45deg, green, cyan,green);
+  background-size: 300% 300%;
+  animation: gradient-effect 20s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
